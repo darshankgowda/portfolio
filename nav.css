@@ -1,0 +1,117 @@
+* {
+    margin: 0px;
+    padding: 0;
+    font-family: Roboto, Arial;
+}
+html {
+    scroll-behavior: smooth;
+}
+.items {
+    list-style-type: none;
+}
+.navigation-bar {
+    background-color:#D8D8D8;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    overflow: hidden;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+.icon {
+    border-radius: 50%;
+    height:50px;
+    width:50px;
+    margin-left: 80px; 
+    margin-top: 4px;
+}
+.left-nav {
+    flex: 2; 
+    position: relative; 
+}
+.icon-text {
+    position: absolute;
+    top: 20px;
+    left: 180px;
+}
+.right-nav {
+    flex: 1;
+}
+.items {
+    display: flex;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.li-item:hover {
+    color: orange;
+}
+.items > a {
+    margin-left: 60px;
+    text-decoration: none;
+    color: black;
+}
+.hamburger {
+    display: none;
+}
+
+@media (max-width:770px) { /*for small screen(minimising) use max*/
+    .navigation-bar {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        height: auto;
+    }
+    .left-nav {
+        flex: 4;
+    }
+    .items {
+        display: none;
+    }
+    .hamburger-img {
+        height: 40px;  
+        width: 40px;
+    }
+    .hamburger {
+        flex: 1;
+        display: flex;
+        cursor: pointer;
+    }
+    .icon {
+        border-radius: 50%;
+        height:50px;
+        width:50px;
+        margin-left: 10px; 
+        margin-top: 3px;
+    }
+    .icon-text {
+        white-space: nowrap;
+        font-size: 12px;
+        left: 70px;
+        bottom:8px;
+    }
+    .items.active {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        transition: 3s;
+    } 
+    .li-item {
+        margin-top: 13px;
+        text-align:center;
+        cursor: pointer;
+    }
+    .left-nav.active {
+        display: none;
+    }
+    .hamburger.active {
+        position: absolute;
+        right: 31px;
+        top:10px;
+    }
+}
+
